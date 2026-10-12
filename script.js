@@ -27,3 +27,6 @@ return humanchoice
 }
 
 console.log(getHumanChoice())
+
+const humanscore = 0
+const computerscore = 0 
