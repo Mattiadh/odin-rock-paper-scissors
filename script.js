@@ -24,6 +24,10 @@ function getComputerChoice() {
     }
 }
 
+function getHumanChoice() {
+    let humanPrompt = prompt("Choose rock, paper or scissors. Be mindful of spelling!")
+
+}
 
 
 
