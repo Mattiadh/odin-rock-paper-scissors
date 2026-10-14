@@ -25,9 +25,17 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanPrompt = prompt("Choose rock, paper or scissors. Be mindful of spelling!")
-
+    let humanPrompt = prompt("Choose rock, paper or scissors. Be mindful of spelling!");
+    return humanPrompt;
 }
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+
+
+
 
 
 
