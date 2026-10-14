@@ -1,63 +1,29 @@
+/*  Plan
 
-/* Pseudocode:
-computer chooses 1 of 3 options and returns string
-When the user chooses rock paper or scissor
-choose a random choice of rock paper or scissors
-if output beats input, print loss
-else print win
+rock paper scissors
+player is given a prompt, computer makes one automatically
+after prompt, the computers' choice is shown followed by a victory, loss, or tie message. 
+(or wrong input message)
+after round, the player gives a new prompt.
+score is tracked and displayed after each combat. 
+the game goes for 5 rounds (bo5).
+after 5th round, the winner is the one with highest score. 
+The player is prompted to play again.
+if so the game restarts.
+
 */
 
 function getComputerChoice() {
-    const cChoice = Math.random()
-    if (cChoice < 0.33) {
+    let computerSign = Math.random();
+    if (computerSign < 0.33) {
         return "rock";
-    } else if
-        (cChoice > 0.66) {
-        return "paper"
+    } else if (computerSign > 0.66) {
+        return "paper";
     } else {
-        return "scissors"
-    }
-
-}
-
-
-function getHumanChoice() {
-    const hChoice = prompt("Write rock, paper or scissors!")
-    return hChoice.toLowerCase()
-}
-
-
-
-let humanscore = 0
-let computerscore = 0
-
-function playRound(humanchoice, computerchoice) {
-    getComputerChoice()
-    getHumanChoice()
-    if ((computerchoice == "paper" && humanchoice == "scissors") || (computerchoice == "scissors" && humanchoice == "rock") || (computerchoice == "rock" && humanchoice == "paper")) {
-        console.log("The computer chose " + computerSelection + "!")
-        console.log(`You win!${humanchoice} beats ${computerchoice}`)
-        humanscore = humanscore +1 
-        console.log ("Your score: " + humanscore + ". Computer score: " + computerscore + ".")
-    } else if (computerchoice === humanchoice) {
-        console.log("The computer chose " + computerSelection + "! ")
-        console.log("It's a tie!")
-    }
-        else {
-        console.log("The computer chose " + computerSelection + "!")
-        console.log(`You loose! ${computerchoice} beats ${humanchoice}`)
-          computerscore = computerscore +1 
-        console.log ("Your score: " + humanscore + ". Computer score: " + computerscore + ".")
+        return "scissors";
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
 
 
-function playGame() {
-    playRound(humanSelection, computerSelection)
-}
-
-playGame()
