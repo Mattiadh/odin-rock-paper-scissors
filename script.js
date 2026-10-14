@@ -32,6 +32,8 @@ let humanscore = 0
 let computerscore = 0
 
 function playRound(humanchoice, computerchoice) {
+    getComputerChoice()
+    getHumanChoice()
     if ((computerchoice == "paper" && humanchoice == "scissors") || (computerchoice == "scissors" && humanchoice == "rock") || (computerchoice == "rock" && humanchoice == "paper")) {
         console.log("The computer chose " + computerSelection + "!")
         console.log(`You win!${humanchoice} beats ${computerchoice}`)
