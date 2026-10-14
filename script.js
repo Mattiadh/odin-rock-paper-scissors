@@ -57,27 +57,54 @@ let computerSelection = getComputerChoice();
 
 function playRound(humanChoice, computerChoice) {
 
+
     console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}.`)
     if (computerChoice === humanChoice) {
         console.log("It's a tie! Go again.");
-    } else if ((humanChoice == "paper") || (humanChoice == "rock" || humanChoice == "scissors")) {
-        computerScore = computerScore + 1;
-        console.log(`The computer won the round. ${computerChoice} beats ${humanChoice}... `)
-
-    } else if
-        ((humanChoice == "paper" && computerChoice == "rock") ||
+    } else if ((humanChoice == "paper" && computerChoice == "rock") ||
         (humanChoice == "rock" && computerChoice == "scissors") ||
         (humanChoice == "scissors" && computerChoice == "rock")) {
         humanScore = humanScore + 1;
         console.log(`You won the round! ${humanChoice} beats ${computerChoice}!`)
 
+    } else if ((humanChoice == "paper") || (humanChoice == "rock" || humanChoice == "scissors")) {
+        computerScore = computerScore + 1;
+        console.log(`The computer won the round. ${computerChoice} beats ${humanChoice}... `)
+
     } else {
         console.log("Wrong input! Check your spelling!");
+        
     }
 
-
 }
-playRound(humanSelection, computerSelection)
+
+function playGame() {
+    playRound(humanSelection, computerSelection);
+    console.log(`Player score = ${humanScore}. Computer score = ${computerScore}`)
+    function repeatRound() {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice()
+        playRound(humanSelection, computerSelection)
+        console.log(`Player score = ${humanScore}. Computer score = ${computerScore}`);
+        if ((humanScore == 3) || (computerScore == 3)) {
+            /*the game is finished*/
+            if (humanScore > computerScore) {
+                console.log("You won the game! (Best out of 5!)")
+            } else {
+                console.log("You lost the game. (Best out of 5...) ")
+            }
+        } else {
+            repeatRound()
+        }
+    }
+repeatRound()
+}
+
+
+
+
+
+playGame();
 
 
 
