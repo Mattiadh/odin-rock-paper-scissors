@@ -8,11 +8,11 @@ else print win
 */
 
 function getComputerChoice() {
-    const computerchoice = Math.random()
-    if (computerchoice < 0.33) {
+    const cChoice = Math.random()
+    if (cChoice < 0.33) {
         return "rock";
     } else if
-        (computerchoice > 0.66) {
+        (cChoice > 0.66) {
         return "paper"
     } else {
         return "scissors"
@@ -22,8 +22,8 @@ function getComputerChoice() {
 
 
 function getHumanChoice() {
-    const humanchoice = prompt("Write rock, paper or scissors!")
-    return humanchoice.toLowerCase()
+    const hChoice = prompt("Write rock, paper or scissors!")
+    return hChoice.toLowerCase()
 }
 
 
@@ -38,7 +38,7 @@ function playRound(humanchoice, computerchoice) {
         humanscore = humanscore +1 
         console.log ("Your score: " + humanscore + ". Computer score: " + computerscore + ".")
     } else if (computerchoice === humanchoice) {
-        console.log("The computer chose " + computerSelection + "!")
+        console.log("The computer chose " + computerSelection + "! ")
         console.log("It's a tie!")
     }
         else {
