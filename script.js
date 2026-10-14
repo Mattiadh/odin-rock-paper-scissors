@@ -1,4 +1,4 @@
-console.log("Hello")
+
 /* Pseudocode:
 computer chooses 1 of 3 options and returns string
 When the user chooses rock paper or scissor
@@ -19,14 +19,31 @@ function getComputerChoice() {
     }
 
 }
-console.log(getComputerChoice())
+
 
 function getHumanChoice() {
-const humanchoice = prompt("Write rock, paper or scissors!")
-return humanchoice
+    const humanchoice = prompt("Write rock, paper or scissors!")
+    return humanchoice.toLowerCase()
 }
 
-console.log(getHumanChoice())
 
-const humanscore = 0
-const computerscore = 0 
+
+let humanscore = 0
+let computerscore = 0
+
+function playRound(humanchoice, computerchoice) {
+    if ((computerchoice == "paper" && humanchoice == "scissors") || (computerchoice == "scissors" && humanchoice == "rock") || (computerchoice == "rock" && humanchoice == "paper")) {
+        console.log(`You win!${humanchoice} beats ${computerchoice}`)
+    } else if (computerchoice === humanchoice) {
+        console.log("It's a tie!")
+    }
+        else {
+        console.log(`You loose! ${computerchoice} beats ${humanchoice}`)
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection)
+console.log(computerSelection)
